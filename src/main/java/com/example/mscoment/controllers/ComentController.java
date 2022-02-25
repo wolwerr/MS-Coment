@@ -31,7 +31,7 @@ public class ComentController {
     }
 
     @GetMapping("/coments")
-    public ResponseEntity<Page<ComentModel>> getAllComents(@PageableDefault(page = 0, size = 5, sort = "comentId", direction = Sort.Direction.DESC) Pageable pageable){
+    public ResponseEntity<Page<ComentModel>> getAllComents(@PageableDefault(page = 0, size = 5) Pageable pageable){
         return new ResponseEntity<>(comentService.findAll(pageable), HttpStatus.OK);
     }
 
